@@ -6,14 +6,16 @@ from growth_rates import *
 
 def update_values(s, i, r, model, iteration_r, iteration_g):
     r_slope, r_int, ga_slope, ga_int  = model
-    be = predict_rate(r_slope, r_int, iteration_r)[0][0]
-
+    R0 = predict_rate(r_slope, r_int, iteration_r)[0][0]
+    if R0 < 0:
+        R0 = 0
+    # Birth Rate and death rate in Canada
     b = 4.2*(10**-5)
     # Infection rate
     ga = predict_rate(ga_slope, ga_int, iteration_g)[0][0]
 
     # Recovery rate
-    R0 = ga/be
+    be = R0 * (ga + b)
     N = 37.5 * (10**6)
 
     print('be:', be)
@@ -74,12 +76,12 @@ def simulate(cases, mortality, recovered):
 
     plt.scatter(x,y)
     plt.title('Simulated COVID-19 in Canada')
-    plt.xlabel('Number of days since April 11, 2020')
+    plt.xlabel('Number of days since April 4, 2020')
     plt.ylabel('Simulated Number of Canadian citizens infected')
     plt.show()
 
 if __name__ == '__main__':
-    cases = pd.read_csv('cases.csv')
-    mortality = pd.read_csv('mortality.csv')
-    recovered = pd.read_csv('recovered_cumulative.csv')
+    cases = pd.read_csv('./datasets/cases.csv')
+    mortality = pd.read_csv('./datasets/mortality.csv')
+    recovered = pd.read_csv('./datasets/recovered_cumulative.csv')
     simulate(cases, mortality, recovered)

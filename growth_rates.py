@@ -24,6 +24,8 @@ def get_r0(cases, mortality, recovered):
 
     plt.scatter(x,r)
     plt.title('R0 Values with Canadian COVID-19 Data')
+    plt.xlabel('Days since Febuary 30, 2020')
+    plt.ylabel('Rate of virus transmission')
     plt.show()
     return (x,r)
 
@@ -51,8 +53,10 @@ def get_gamma(cases, mortality, recovered):
 
     plt.scatter(x,ga)
     plt.title('Gamma Values with Canadian COVID-19 Data')
+    plt.xlabel('Days since Febuary 30, 2020')
+    plt.ylabel('Probability of recovery from COVID-19')
     plt.show()
-    
+
     return (x,ga)
 
 def linear_regression(x_data,y_data):
@@ -75,8 +79,8 @@ def predict_rate(slope, intercept, time):
     return slope*(time) + intercept
 
 if __name__ == '__main__':
-        cases = pd.read_csv('cases.csv')
-        mortality = pd.read_csv('mortality.csv')
-        recovered = pd.read_csv('recovered_cumulative.csv')
+        cases = pd.read_csv('./datasets/cases.csv')
+        mortality = pd.read_csv('./datasets/mortality.csv')
+        recovered = pd.read_csv('./datasets/recovered_cumulative.csv')
         get_gamma(cases, mortality, recovered)
         get_r0(cases, mortality, recovered)

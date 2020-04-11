@@ -15,9 +15,11 @@ def active_cases(cases, mortality, cured):
     recovered = []
     new_cases = []
     active = 0
+    total_cases = 0
+    total_deaths = 0
+    total_recovered = 0
 
     for date in cases['date_report']:
-
         if date in date_dict:
             date_dict[date][0] += 1
         else:
@@ -47,15 +49,25 @@ def active_cases(cases, mortality, cured):
         daily_insights = date_dict[date]
         new = daily_insights[0]
         death = daily_insights[1]
+        # Recovered is the total number of people who have recovered up to that
+        # point. Its not the number that recovered on that date
+
         recover = daily_insights[2]
-        #print(date, ': ', new)
+        recover_difference = recover - total_recovered
+        total_recovered = recover
+        total_cases += new
+        total_deaths += death
+        active = total_cases - total_recovered - total_deaths
+
         new_cases.append(new)
         deaths.append(death)
-        recovered.append(recover)
-
-        active += new - death - recover
+        recovered.append(recover_difference)
         active_cases.append(active)
-        #print(date, ': ', active)
+
+    print('total cases: ',total_cases)
+    print('total deaths: ',total_deaths)
+    print('total recovered: ',total_recovered)
+    print('Active Cases: ',total_cases - total_recovered - total_deaths)
 
     x_ticks = []
     display_dates = []
@@ -77,21 +89,7 @@ def active_cases(cases, mortality, cured):
     plt.title('Number of new COVID-19 cases with respect to time')
     plt.xticks(x_ticks, display_dates)
     plt.show()
-    #
-    # plt.plot(sorted_dates, deaths, color='red')
-    # plt.xlabel('Date')
-    # plt.ylabel('Number of deaths')
-    # plt.title('Number of COVID-19 deaths with respect to time')
-    # plt.xticks(x_ticks, display_dates)
-    # plt.show()
-    #
-    # plt.plot(sorted_dates, recovered, color='blue')
-    # plt.xlabel('Date')
-    # plt.ylabel('Number of recovered COVID-19 caes')
-    # plt.title('Number of COVID-19 recoveries with respect to time')
-    # plt.xticks(x_ticks, display_dates)
-    # plt.show()
-    #
+
     line_1 = plt.plot(sorted_dates, recovered, color='blue')
     line_2 = plt.plot(sorted_dates, deaths, color='red')
     plt.xlabel('Date')
@@ -108,3 +106,9 @@ def total_cases(new_cases):
     for num in new_cases:
         total += num
     return total
+
+if __name__ == '__main__':
+    cases = pd.read_csv('./datasets/cases.csv')
+    mortality = pd.read_csv('./datasets/mortality.csv')
+    recovered = pd.read_csv('./datasets/recovered_cumulative.csv')
+    active_cases(cases, mortality, recovered)
