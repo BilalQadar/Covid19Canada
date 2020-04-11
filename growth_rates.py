@@ -13,7 +13,7 @@ def get_r0(cases, mortality, recovered):
     count = 0
 
     # Remove datapoints before social distancing
-    outdated = 30
+    outdated = 35
     start = outdated + incubation_period
 
     for i in range(start,len(new)):
@@ -22,8 +22,9 @@ def get_r0(cases, mortality, recovered):
             r.append(new[i]/new[i-incubation_period])
             count += 1
 
-    #plt.scatter(x,r)
-    #plt.show()
+    plt.scatter(x,r)
+    plt.title('R0 Values with Canadian COVID-19 Data')
+    plt.show()
     return (x,r)
 
 def get_gamma(cases, mortality, recovered):
@@ -35,21 +36,23 @@ def get_gamma(cases, mortality, recovered):
     total_recovered = 0
     count = 0
 
-    # Irrelevent cutoff refers to when datapoints are recent enough to reflect
+    # Outdated refers to when datapoints which are outdated and don't reflect
     # current enviroment for pandemic. ie) exclude data before social distancing
-    cutoff = 40
+    outdated = 45
     new, recovered, deaths, active  = active_cases(cases, mortality, recovered)
 
     for i in range(len(new)):
         total_inf += new[i]
         total_recovered += recovered[i]
-        if i > cutoff:
+        if i > outdated:
             ga.append(recovered[i]/total_inf)
             x.append(count)
             count += 1
 
-    #plt.scatter(x,ga)
-    #plt.show()
+    plt.scatter(x,ga)
+    plt.title('Gamma Values with Canadian COVID-19 Data')
+    plt.show()
+    
     return (x,ga)
 
 def linear_regression(x_data,y_data):
@@ -70,3 +73,10 @@ def predict_rate(slope, intercept, time):
     known data """
 
     return slope*(time) + intercept
+
+if __name__ == '__main__':
+        cases = pd.read_csv('cases.csv')
+        mortality = pd.read_csv('mortality.csv')
+        recovered = pd.read_csv('recovered_cumulative.csv')
+        get_gamma(cases, mortality, recovered)
+        get_r0(cases, mortality, recovered)

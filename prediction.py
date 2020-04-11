@@ -73,6 +73,9 @@ def simulate(cases, mortality, recovered):
             print('r:', r, '\n')
 
     plt.scatter(x,y)
+    plt.title('Simulated COVID-19 in Canada')
+    plt.xlabel('Number of days since April 11, 2020')
+    plt.ylabel('Simulated Number of Canadian citizens infected')
     plt.show()
 
 if __name__ == '__main__':
