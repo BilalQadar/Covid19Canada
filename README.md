@@ -21,7 +21,7 @@ All the figures above are based on real data. The next section will manipulate t
 
 The model used to predict future infections is based on the SIR (suseptible, infected and recovered) model. This model splits the total population (N) into a suseptible, infected and recovered population. The model assumes that the population remains fixed (the birth rate and death rate are equivalent). Another assumption made is once a persons case is marked resolved they can't become infected again. 
 
-![equation](ax^2 + bx +c )
+![SIR Model](https://drive.google.com/file/d/1bSZLUOTHY7qyflAI2VrKOgGdjzZDUCO7/view?usp=sharing)
 
 # Citation
 COVID-19 Canada Open Data Working Group. Epidemiological Data from the COVID-19 Outbreak in Canada. https://github.com/ishaberry/Covid19Canada. (Access Date). 
