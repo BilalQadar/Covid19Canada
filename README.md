@@ -1,5 +1,5 @@
 # Epidemiological Data from the COVID-19 Outbreak in Canada
-Using publically available data and machine learning to predict the spread of COVID-19 in Canada throughout time. 
+Using publicly available data and machine learning to predict the spread of COVID-19 in Canada throughout time. 
 
 # Disclaimer
 The goal of this project was to attempt to model the spread of COVID-19 in Canada using Machine Learning. However, many assumptions were made about the population growth of Canada. The viruses transmission evolves every day resulting in the training data to become outdated very quickly. Take this project as an interesting look at how the virus may change over time and as a potential way of seeing where in the pandemic cycle Canada is. Refer to the [CDC](https://www.cdc.gov/coronavirus/2019-nCoV/index.html), the [WHO](https://www.who.int/emergencies/diseases/novel-coronavirus-2019) and the [Canadian government](https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection/health-professionals/epidemiological-summary-covid-19-cases.html) for up to date and accurate announcements about the current situation in Canada. 
