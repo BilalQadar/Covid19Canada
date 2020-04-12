@@ -21,11 +21,11 @@ All the figures above are based on real data. The next section will manipulate t
 
 The model used to predict future infections is based on the SIR (suseptible, infected and recovered) model. This model splits the total population (N) into a suseptible, infected and recovered population. The model assumes that the population remains fixed (the birth rate and death rate are equivalent). Another assumption made is once a persons case is marked resolved they can't become infected again. 
 
-![Suseptible Population](https://www.codecogs.com/eqnedit.php?latex=S_{t&plus;1}&space;=&space;\frac{\beta}{N}I_tS_t&space;&plus;&space;b(I_t&space;&plus;&space;R_t)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S_{t&plus;1}&space;=&space;\frac{\beta}{N}I_tS_t&space;&plus;&space;b(I_t&space;&plus;&space;R_t)" title="S_{t+1} = \frac{\beta}{N}I_tS_t + b(I_t + R_t))
+![Suseptible Population](https://latex.codecogs.com/gif.latex?S_{t&plus;1}&space;=&space;\frac{\beta}{N}I_tS_t&space;&plus;&space;b(I_t&space;&plus;&space;R_t))
 
 ![Infected Population](https://latex.codecogs.com/gif.latex?I_{t&plus;1}&space;=&space;I_t(1-\gamma&space;-b)&space;&plus;&space;\frac{\beta}{N}I_tS_t)
 
-![Recovered Population](https://www.codecogs.com/eqnedit.php?latex=R_{t&plus;1}&space;=&space;R_t(1-b)&space;&plus;&space;\gamma&space;I_t" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{t&plus;1}&space;=&space;R_t(1-b)&space;&plus;&space;\gamma&space;I_t" title="R_{t+1} = R_t(1-b) + \gamma I_t)
+![Recovered Population](https://latex.codecogs.com/gif.latex?R_{t&plus;1}&space;=&space;R_t(1-b)&space;&plus;&space;\gamma&space;I_t)
 
 # Citation
 COVID-19 Canada Open Data Working Group. Epidemiological Data from the COVID-19 Outbreak in Canada. https://github.com/ishaberry/Covid19Canada. (Access Date). 
