@@ -22,7 +22,7 @@ def update_values(s, i, r, model, iteration_r, iteration_g):
     print('ga: ', ga)
     print('R0: ', R0)
     # Suseptible population
-    sp = s + (-1 * (be/N) * i * s) + (b - (i + r))
+    sp = s + (-1 * (be/N) * i * s) + (b *  (i + r))
     # Infected population
     ip = i * (1 - ga - b) + ((be/N) * i * s)
     # Recovered population
