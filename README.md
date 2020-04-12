@@ -25,7 +25,7 @@ The model used to predict future infections is based on the SIR (suseptible, inf
 
 ![Infected Population](https://latex.codecogs.com/gif.latex?I_{t&plus;1}&space;=&space;I_t(1-\gamma&space;-b)&space;&plus;&space;\frac{\beta}{N}I_tS_t)
 
-![Recovered Population](https://latex.codecogs.com/gif.latex?R_{t&plus;1}&space;=&space;R_t(1-b)&space;&plus;&space;\gamma&space;I_t)
+![Recovered Population](https://latex.codecogs.com/gif.latex?R_{t&plus;1}&space;=&space;R_t(1-b)&space;&plus;&space;\gamma&space;I_t%22%20title=%22R_{t+1}%20=%20R_t(1-b)%20+%20\gamma%20I_t)
 
 # Citation
 COVID-19 Canada Open Data Working Group. Epidemiological Data from the COVID-19 Outbreak in Canada. https://github.com/ishaberry/Covid19Canada. (Access Date). 
