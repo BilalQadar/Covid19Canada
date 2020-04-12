@@ -23,7 +23,7 @@ The model used to predict future infections is based on the SIR (suseptible, inf
 
 ![Suseptible Population](https://www.codecogs.com/eqnedit.php?latex=S_{t&plus;1}&space;=&space;\frac{\beta}{N}I_tS_t&space;&plus;&space;b(I_t&space;&plus;&space;R_t)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S_{t&plus;1}&space;=&space;\frac{\beta}{N}I_tS_t&space;&plus;&space;b(I_t&space;&plus;&space;R_t)" title="S_{t+1} = \frac{\beta}{N}I_tS_t + b(I_t + R_t))
 
-![Infected Population](https://latex.codecogs.com/gif.latex?I_{t&plus;1}&space;=&space;I_t(1-\gamma&space;-b)&space;&plus;&space;\frac{\beta}{N}I_tS_t" title="I_{t+1} = I_t(1-\gamma -b) + \frac{\beta}{N}I_tS_t)
+![Infected Population](https://latex.codecogs.com/gif.latex?I_{t&plus;1}&space;=&space;I_t(1-\gamma&space;-b)&space;&plus;&space;\frac{\beta}{N}I_tS_t)
 
 ![Recovered Population](https://www.codecogs.com/eqnedit.php?latex=R_{t&plus;1}&space;=&space;R_t(1-b)&space;&plus;&space;\gamma&space;I_t" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{t&plus;1}&space;=&space;R_t(1-b)&space;&plus;&space;\gamma&space;I_t" title="R_{t+1} = R_t(1-b) + \gamma I_t)
 
