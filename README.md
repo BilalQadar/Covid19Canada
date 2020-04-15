@@ -34,4 +34,4 @@ Using this previous data of coefficent values a linear regression can be perform
 COVID-19 Canada Open Data Working Group. Epidemiological Data from the COVID-19 Outbreak in Canada. https://github.com/ishaberry/Covid19Canada. (Access Date). 
 
 # Accurate as of: 
-April 4th, 2020
+April 14th, 2020
