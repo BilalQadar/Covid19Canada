@@ -66,9 +66,8 @@ def linear_regression(x_data,y_data):
 
     x_data = x_data.reshape(-1,1)
     y_data = y_data.reshape(-1,1)
-    X_train, X_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.2, random_state=0)
     regressor = LinearRegression()
-    regressor.fit(X_train, y_train)
+    regressor.fit(x_data, y_data)
 
     return (regressor.coef_, regressor.intercept_)
 
